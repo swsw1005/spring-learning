@@ -1,0 +1,17 @@
+database:
+  driver-class-name: org.postgresql.Driver
+  clusters:
+    - name: db_1
+      url: jdbc:postgresql://192.168.2.75:5501/test_db
+      username: root
+      password: test_passwd
+      maximum-pool-size: 3
+      readonly: false
+      schema: public
+    - name: db_2
+      url: jdbc:postgresql://192.168.2.75:5502/test_db
+      username: root
+      password: test_passwd
+      maximum-pool-size: 3
+      readonly: false
+      schema: public

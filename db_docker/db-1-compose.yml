@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  test_db_1:
+    container_name: test_db_1         # 컨테이너 이름
+    image: postgres:12           # 이미지명:태그
+    environment: # 환경변수들
+      - LC_ALL=C.UTF-8
+      - LC_COLLATE=C
+      - TZ=Asia/Seoul
+      - POSTGRES_DB=test_db      # 생성할 DB 이름
+      - POSTGRES_USER=root     # DB 사용자 명
+      - POSTGRES_PASSWORD=test_passwd     # DB 사용자 비밀번호
+    restart: always                  #  항상 재시작 옵션
+    ports:
+      - 5501:5432      # 외부포트:내부포트
